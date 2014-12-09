@@ -1,20 +1,34 @@
 #include <iostream>
+#include <math.h>
 #include <string>
+#include <fstream>
 using namespace std;
 int main() 
 {
-	cout<<"enter line"<<endl;
-	string s;
-	cin>>s;
-	cout<<"enter abbreviation and decryption"<<endl;
-	string a,d;
-	cin>>a;
-	cin>>d;
+	ifstream in;
+	ofstream out;
+	in.open("input.txt");
+	out.open("output.txt");
+	//enter line
+	string s, str;
+	getline (in,s);
+	str.append(s);
+	str.append("\n");
+	//enter abbreviation and decryption
+	string a,d,abb,dec;
+	getline (in,a);
+	abb.append(a);
+	abb.append("\n");
+	getline (in,d);
+	dec.append(d);
+	dec.append("\n");
    int l,n,k;
-	l=a.length();
-	n=d.length();
-	k=s.find(a);
-	s.erase(k,l);
-        s.insert(k,d,1,n);
-	cout<<s;
+	l=abb.length();
+	n=dec.length();
+	k=str.find(a);
+	str.erase(k,l);
+   str.insert(k,dec,1,n);
+	out<<str;
+	in.close();
+	out.close();
 }
