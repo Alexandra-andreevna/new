@@ -12,22 +12,27 @@ int main()
 	//enter line
 	string s, str;
 	getline (in,s);
-	str.append(s);
+	str.append(str);
 	str.append("\n");
-	//enter abbreviation and decryption
-	string a,d,abb,dec;
-	getline (in,a);
-	abb.append(a);
-	abb.append("\n");
-	getline (in,d);
-	dec.append(d);
-	dec.append("\n");
-   int l,n,k;
-	l=abb.length();
-	n=dec.length();
-	k=str.find(a);
-	str.erase(k,l);
-   str.insert(k,dec,1,n);
+	int m;
+	m=str.length();
+	int l,n,k;
+	for (int i=1; i<m; i++)
+	{
+		//enter abbreviation and decryption
+		string a,d,abb,dec;
+		getline (in,a);
+		abb.append(a);
+		getline (in,d);
+		dec.append(d);
+		l=abb.length();
+		n=dec.length();
+		k=0;
+		k=str.find(a);
+		if (k!=0)
+			str.erase(k,l);
+		str.insert(k,dec,1,n);
+	};
 	out<<str;
 	in.close();
 	out.close();
