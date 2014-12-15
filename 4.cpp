@@ -14,8 +14,9 @@ int main()
 	getline (in,s);
 	str.append(str);
 	str.append("\n");
+	//enter number of substitutions
 	int m;
-	m=str.length();
+	cin>>m;
 	int l,n,k;
 	for (int i=1; i<m; i++)
 	{
