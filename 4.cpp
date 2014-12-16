@@ -14,15 +14,12 @@ int main()
 	getline (in,s);
 	str.append(s);
 	str.append("\n");
-	//enter number of substitutions
-	int m;
-	cin>>m;
 	int l,n,k;
-	for (int i=1; i<m; i++)
-	{
+   while (! in.eof())
+   {
 		//enter abbreviation and decryption
 		string a,d,abb,dec;
-		getline (in,a);
+		getline (in,a," ");
 		abb.append(a);
 		getline (in,d);
 		dec.append(d);
