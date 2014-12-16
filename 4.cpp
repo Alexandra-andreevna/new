@@ -12,7 +12,7 @@ int main()
 	//enter line
 	string s, str;
 	getline (in,s);
-	str.append(str);
+	str.append(s);
 	str.append("\n");
 	//enter number of substitutions
 	int m;
