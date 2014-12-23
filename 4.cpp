@@ -3,6 +3,22 @@
 #include <string>
 #include <fstream>
 using namespace std;
+int pos (string a, string b)
+ {
+	int m,l,k;
+	m=a.length();
+	l=b.length();
+	for (int i=1; i<m; i++)
+	{
+		if (a[i]==b[1])
+		for (int j=1; j<l; j++)
+			if (a[i+j-1]==b[j])
+				k=k+1;
+		if (k==l)
+			return i;
+        };
+ }
+
 int main() 
 {
 	ifstream in;
@@ -26,7 +42,7 @@ int main()
 		l=abb.length();
 		n=dec.length();
 		k=0;
-		k=str.find(a);
+		k=pos(str,abb)
 		if (k!=0)
 			str.erase(k,l);
 		str.insert(k,dec,1,n);
