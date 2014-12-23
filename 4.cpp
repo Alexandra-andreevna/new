@@ -27,7 +27,7 @@ int main()
 	out.open("output.txt");
 	//enter line
 	string s, str;
-	getline (in,s);
+	getline (out,s);
 	str.append(s);
 	str.append("\n");
 	int l,n,k;
