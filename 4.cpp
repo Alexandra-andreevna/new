@@ -5,7 +5,7 @@
 using namespace std;
 int pos (string a, string b)
  {
-	int m,l,k;
+	int m,l,k,d;
 	m=a.length();
 	l=b.length();
 	for (int i=1; i<m; i++)
@@ -14,14 +14,15 @@ int pos (string a, string b)
 		for (int j=1; j<l; j++)
 			if (a[i+j-1]==b[j])
 				k=k+1;
-		if (k==l)
-			return i;
-        };
+		if (k==i)
+			return d;
  }
+}
 
 int main() 
 {
 	ifstream in;
+	ifstream out;
 	ofstream out;
 	in.open("input.txt");
 	out.open("output.txt");
